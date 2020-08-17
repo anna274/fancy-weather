@@ -1,0 +1,58 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body, h1, h2, h3, h3, h4, p, ul, ol {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h1 {
+  @include font(30.6rem, 30.6rem, bold, normal, uppercase);
+}
+
+h2 {
+  @include font(8rem, 9.8rem, 600, normal, uppercase);
+}
+
+h3 {
+  @include font(4.4rem, 5.4rem, bold, normal, uppercase);
+}
+
+h4 {
+  @include font(2.2rem, 3.7rem, bold, normal, uppercase);
+}
+
+p {
+  @include font(2rem, 3rem, normal, 600, capitalize);
+}
+
+button {
+  margin: 0;
+  padding: 0;
+}
+
+.main__wrapper {
+  padding: 0 90px;
+}
+
+.backgrounded {
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  transition: background-color 2s linear;
+}
+
+.backgrounded.disappear {
+  background-color: rgba(0, 0, 0, 1);
+}

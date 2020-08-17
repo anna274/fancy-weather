@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fancy Weather</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet" />
+</head>
+<body style="background-image: url(./assets/bg.jpg);" class="backgrounded" id="bg-container">
+  <div class="loader__layout">
+    <div class="loader"></div>
+  </div>
+  <main>
+    <div class="controllers">
+      <div class="controllers__weather">
+        <button class="button button_refresh" id="bg-switcher"><span class="icon icon_refresh"></span></button>
+        <div class="dropdown" id="lang-switcher">
+          <div class="dropdown__trigger">
+            <span class="trigger">RU</span>
+            <div class="arrow"></div>
+          </div>
+          <div class="dropdown__options">
+              <span data-lang="ru" class="option">RU</span>
+              <span data-lang="be" class="option">BY</span>
+              <span data-lang="en" class="option">EN</span>
+          </div>
+        </div>
+        <div class="controllers_connected" id="unit-switcher">
+          <button data-unit="I" class="button">F&#730;</button>
+          <button data-unit="M" class="button">C&#730;</button>
+        </div>
+      </div>
+      <form class="controller__location search-form" id="location-searcher">
+        <div class=input-container>
+          <input data-i18n="search.placeholder" class="input" type="text" placeholder="">
+          <span class="icon icon_microphone" id="microphone"></span>
+        </div>
+        <button data-i18n="search.button" class="button" type="submit"></button>
+      </form>
+    </div>
+    <div id="error-field"></div>
+    <div class="info">
+      <div class="info__wrapper">
+        <div class="weather-info">
+          <div class="today">
+            <h3 data-i18n="-" class="today__location"></h3>
+            <p class="today__date"></p>
+            <div class="today__weather">
+              <div class="degree-container">
+                <h1 data-measure="temp" class="degree"></h1>
+              </div>
+              <div class="description">
+                <img class="description__weather-img" src="#">
+                <div class="description__characteristics">
+                  <div class="characteristic">
+                    <span data-i18n="-" id="description" class="characteristic__value"></span>
+                  </div>
+                  <div class="characteristic">
+                    <span data-i18n="feel" class="characteristic__name"></span>
+                    <span data-measure="temp" id="feels-like" class="characteristic__value"></span>
+                  </div>
+                  <div class="characteristic">
+                    <span data-i18n="wind" class="characteristic__name"></span>
+                    <span id="wind" class="characteristic__value"></span>
+                    <span data-i18n="ms"></span>
+                  </div>
+                  <div class="characteristic">
+                    <span data-i18n="humidity" class="characteristic__name"></span>
+                    <span id="humidity" class="characteristic__value"></span>
+                    <span>%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="other-days">
+            <div class="other-day">
+              <h4 data-i18n="-" class="other-day__date"></h4>
+              <div class="other-day__weather">
+                <h2 data-measure="temp" class="other-day__degree"></h2>
+                <img class="other-day__weather-img" src="#">
+              </div>
+            </div>
+            <div class="other-day">
+              <h4 data-i18n="-" class="other-day__date"></h4>
+              <div class="other-day__weather">
+                <h2 data-measure="temp" class="other-day__degree"></h2>
+                <img class="other-day__weather-img" src="#">
+              </div>
+            </div>
+            <div class="other-day">
+              <h4 data-i18n="-" class="other-day__date"></h4>
+              <div class="other-day__weather">
+                <h2 data-measure="temp" class="other-day__degree"></h2>
+                <img class="other-day__weather-img" src="#">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="location-info">
+          <div class="map">
+            <div class="map__mask" id="map"></div>
+          </div>
+          <div class="coordinates">
+            <div class="latitude">
+              <p data-i18n="latitude"></p>
+              <p class="value"></p>
+            </div>
+            <div class="longitude">
+              <p data-i18n="longitude"></p>
+              <p class="value"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

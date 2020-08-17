@@ -1,0 +1,6 @@
+#error-field {
+  height: 2rem;
+  text-align: center;
+  color: red;
+  @include font(2rem, 2rem, normal);
+}

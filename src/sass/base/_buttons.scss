@@ -1,0 +1,40 @@
+.button {
+  width: 4.4rem;
+  height: 4.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $controller-color-active;
+  color: $color-light;
+  border: 0;
+  border-radius: 5px;
+  outline: none;
+  @include font(1.4rem, 1.7rem, bold, normal, uppercase);
+  &:hover {
+    background-color: $controller-color-hover;
+  }
+  cursor: pointer;
+}
+
+.button.checked {
+  background-color: $controller-color-checked;
+  cursor: default;
+}
+
+.button_refresh {
+  background-color: transparent;
+  background-image: url('../assets/img/controllers-icons/refresh-button-background.svg');
+}
+
+.button_refresh.load .icon{
+  animation: rotation 1s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
